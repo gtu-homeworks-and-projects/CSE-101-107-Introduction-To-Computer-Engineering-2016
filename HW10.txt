@@ -1,0 +1,10 @@
+1.SELECT [OrderID],[CustomerID] FROM [Orders];
+
+2.SELECT Employees.FirstName,Employees.LastName,Orders.OrderID FROM [Employees] JOIN Orders ON Employees.EmployeeID=Orders.EmployeeID;
+
+3.SELECT Products.ProductName,Shippers.ShipperName,Customers.Country
+FROM Orders 
+JOIN Customers ON Orders.CustomerID=Customers.CustomerID
+JOIN OrderDetails ON Orders.OrderID=OrderDetails.OrderID
+JOIN Shippers ON Orders.ShipperID=Shippers.ShipperID
+JOIN Products ON OrderDetails.ProductID=Products.ProductID
